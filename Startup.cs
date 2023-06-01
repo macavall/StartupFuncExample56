@@ -1,18 +1,22 @@
 ﻿using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Azure.WebJobs;
+using Microsoft.Azure.WebJobs.Host;
+using Microsoft.Azure.WebJobs.Hosting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using StartupFuncExample56;
 
-[assembly: FunctionsStartup(typeof(FunctionsStartup))]
+[assembly: WebJobsStartup(typeof(Startup))]
 
 namespace StartupFuncExample56
 {
-    public  class Startup : FunctionsStartup
+    public class Startup : IWebJobsStartup
     {
-        public override void Configure(IFunctionsHostBuilder builder)
+        public void Configure(IWebJobsBuilder builder)
         {
             builder.Services.AddAuthenticationCore();
             builder.Services.AddAuthorization();
