@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-[assembly: FunctionsStartup(typeof(StartupFuncExample56.Startup))]
+[assembly: FunctionsStartup(typeof(StartupFuncExample56.Startup))] // test
 
 namespace StartupFuncExample56
 {
